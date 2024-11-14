@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@v0.170.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.170.0/examples/jsm/"
+            }
+        }
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
+    <title>Printify</title>
+</head>
+<body class="bg-gray-100 font-sans antialiased text-gray-900">
+    <!-- Header -->
+    <!-- <header class="flex items-center justify-between mx-10 my-8">
+        <img src="pmndrs.png" alt="Logo" class="w-10 h-10">
+        <div id="shopIcon" class="text-xl">🛒</div>
+    </header> -->
+    <div id="overlay" class="w-full h-full flex justify-center items-center fixed">
+
+        <!-- Intro Section -->
+        <section id="introSection" class="flex flex-col gap-3 items-start ms-28">
+            <h1 class="text-[190px] italic w-1/2 leading-[0.77] uppercase font-bold">Make it yours.</h1>
+            <p class="text-lg w-1/3">
+                Create your unique and exclusive shirt with our brand-new 3D customization tool.
+                 <strong>Unleash your imagination</strong> and define your own style.
+            </p>
+        </section>
+
+        <!-- Customizer Section -->
+        <section id="customizerSection" class="hidden flex-col items-end text-center">
+            <!-- Color Options -->
+            <div id="colorOptions" class="h-screen flex items-end pb-10 space-x-2"></div>
+
+            <!-- Decals Options -->
+            <div id="decals" class="absolute flex flex-col gap-3 left-0 bottom-0 pb-10 ps-10">
+                <h1 class="uppercase">Choose a design from below</h1>
+                <div class="flex gap-3">
+                    <img src="react_thumb.png" class="decal-icon transition-all duration-300 hover:scale-150 z-10 size-7 cursor-pointer" alt="React Decal">
+                    <img src="three2_thumb.png" class="decal-icon transition-all duration-300 hover:scale-150 z-10 size-7 cursor-pointer" alt="Three Decal">
+                    <img src="pmndrs_thumb.png" class="decal-icon transition-all duration-300 hover:scale-150 z-10 size-7 cursor-pointer" alt="Pmndrs Decal">
+                </div>
+            </div>
+
+            <div class="action-buttons w-full h-full absolute top-0 right-0 py-10 pr-10 flex flex-col items-end justify-between"></div>
+        </section>
+    </div>
+      <script type="module" src="main.js"></script>    
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        document.getElementById('buyButton').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
